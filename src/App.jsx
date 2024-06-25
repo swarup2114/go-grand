@@ -7,10 +7,13 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "./App.css";
 import Home from "./components/Home";
+// import Login from './components/Login';
 
 function App() {
   return (
     <div className="App">
+      {/* <Login/> */}
+
       <Router>
         <div className="App">
           <Header />
