@@ -1,9 +1,8 @@
 import React from "react";
-import { foodItems,ourServiceList,cheflist } from "../FoodData/foodList";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import { foodItems, ourServiceList, cheflist } from "../FoodData/foodList";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import "../stylesComponents/home.css";
-
-
 
 const Home = () => {
   const handleScroll = (direction) => {
@@ -35,28 +34,27 @@ const Home = () => {
           <button className="reserve-button">Reserve a Table</button>
           <button className="reserve-button">Our Menu</button>
         </div>
-      
       </div>
-     
+
       <div className="card-cont">
-      {ourServiceList.map((item, id) => {    
-        return (
-          <div key={id} className="card-item">
-            <p className="card-icon">{item.icon}</p>
-            <p>{item.title}</p>
-            <p>{item.content}</p>
-          </div>
-        );
-      })}
-    </div>
-    <div className="food-search">
+        {ourServiceList.map((item, id) => {
+          return (
+            <div key={id} className="card-item">
+              <p className="card-icon">{item.icon}</p>
+              <p>{item.title}</p>
+              <p>{item.content}</p>
+            </div>
+          );
+        })}
+      </div>
+      <div className="food-search">
         <h3>Search by Food</h3>
         <div className="btnSection">
           <button onClick={() => handleScroll("left")} className="btnIcons">
-            <FaArrowLeft />
+            <ArrowBackIosNewIcon />
           </button>
           <button onClick={() => handleScroll("right")} className="btnIcons">
-            <FaArrowRight />
+            <ArrowForwardIosIcon />
           </button>
         </div>
       </div>
@@ -69,18 +67,15 @@ const Home = () => {
         ))}
       </div>
       <div className="card-cont">
-      {cheflist.map((item, id) => {    
-        return (
-          <div key={id} className="card-item">
-          
-            <img src={item.img} alt="chef"/>
-            <p>{item.name}</p>
-          </div>
-        );
-      })}
-    </div>
-    
-   
+        {cheflist.map((item, id) => {
+          return (
+            <div key={id} className="card-item">
+              <img src={item.img} alt="chef" />
+              <p>{item.name}</p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

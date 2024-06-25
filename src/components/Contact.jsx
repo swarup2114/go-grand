@@ -1,6 +1,5 @@
-import React from 'react';
-import '../stylesComponents/contact.css';
-// import restaurantImage from './restaurant.jpg';
+import React from "react";
+import "../stylesComponents/contact.css";
 
 function Contact() {
   return (
@@ -18,7 +17,10 @@ function Contact() {
         </form>
       </div>
       <div className="contact-image">
-        <img src="https://rishikeshcamps.in/wp-content/uploads/2023/05/restaarant.jpg" alt="Restaurant" />
+        <img
+          src="https://rishikeshcamps.in/wp-content/uploads/2023/05/restaarant.jpg"
+          alt="Restaurant"
+        />
       </div>
     </section>
   );
