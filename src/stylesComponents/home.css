@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap');
 .home {
   position: relative;
   display: flex;
-  background-image: url("https://66683d172425d1ff19ff6225--delightful-sable-e4f144.netlify.app/assets/img/hero-bg.jpg");
+  background-image: url("../Assests/eat1.avif");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,9 +24,13 @@
   z-index: 1;
 }
 
+
 .home > * {
   position: relative;
   z-index: 2;
+}
+.btnSection{
+  border-radius: 50px;
 }
 
 .home h2 {
@@ -38,7 +43,7 @@
 }
 
 .home p {
-  text-align: start;
+  /* text-align: start; */
   font-size: 28px;
   line-height: 1.6;
   margin-bottom: 20px;
@@ -77,7 +82,7 @@
 .food-menu {
   display: flex;
   overflow-x: hidden;
-  padding: 20px 0;
+  padding: 20px ;
   margin: 20px auto;
   gap: 10px;
 }
@@ -145,10 +150,68 @@
   margin-bottom: 10px;
 }
 
+.eat-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px 20px;
+  background-color: #222; /* Darker background for the eat section */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Adjust shadow for better effect */
+  margin: 20px 0;
+}
+
+.eat-text {
+  flex: 1;
+  max-width: 500px; /* Set specific width for eat-text */
+  margin-right: 20px;
+  color: #fff; /* Change text color for contrast */
+  animation: fadeIn 1s ease-in-out; /* Add animation for fade-in effect */
+}
+
+.eat-text h2 {
+  font-size: 2rem;
+  color: #cda45e;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif; /* Custom font for h2 */
+}
+
+.eat-text p {
+  font-size: 1.2rem;
+  color: #ccc; /* Lighter text color for better readability */
+  line-height: 1.6;
+  font-family: 'Roboto', sans-serif; /* Custom font for p */
+}
+
+.eat-text h6 {
+  font-size: 1rem;
+  color: #999;
+  margin-top: 10px;
+  font-family: 'Roboto', sans-serif; /* Custom font for h6 */
+}
+
+.eat-image {
+  flex: 1;
+  animation: slideUp 1s ease-in-out; /* Add animation for slide-up effect */
+}
+
+.eat-image img {
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Adjust shadow for better effect */
+}
+
+
 @media screen and (max-width: 768px) {
   .home {
+    padding: 10px;
+    height: 55vh;
+    width: 94%;
+    text-align: center;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 
   .home img {
@@ -167,9 +230,9 @@
     font-size: 16px;
   }
 
-  .food-menu {
-    justify-content: center;
-  }
+ .food-menu{
+  padding: 20px 10px;
+ }
 
   .food-item {
     margin-right: 0;
@@ -185,6 +248,26 @@
 
   .card-item p {
     font-size: 14px;
+  }
+  .eat-section {
+    flex-direction: column;
+  }
+
+  .eat-text {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .eat-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .eat-text p {
+    font-size: 1rem;
+  }
+
+  .eat-image img {
+    max-width: 100%;
   }
 }
 
@@ -215,5 +298,12 @@
 
   .card-item p {
     font-size: 12px;
+  }
+  .eat-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .eat-text p {
+    font-size: 0.9rem;
   }
 }

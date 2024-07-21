@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import "../stylesComponents/header.css"
 import { FaBars } from 'react-icons/fa'; 
+import logo from "../Assests/logo.jpeg"
+import { useNavigate } from "react-router-dom";
 
 
 function Header() {
+  const usenav=useNavigate()
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -13,7 +16,7 @@ function Header() {
 
   return (
     <header>
-      <h1>GO Grand</h1>
+   <img src={logo} alt="logo" className='logo' onClick={()=>usenav("/")} />
       <nav className={showMenu ? 'show' : ''}>
         <NavLink to="/" onClick={() => setShowMenu(false)}>
           Home

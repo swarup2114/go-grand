@@ -1,12 +1,11 @@
-
 header {
   background-color: #fff;
   color: #333;
-  padding: 1rem;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 60px;
+  padding: 10px 60px;
   box-shadow: 0 2px 4px #0000001a;
   position: -webkit-sticky; 
   position: sticky;
@@ -22,6 +21,12 @@ header h1 {
   text-decoration: none;
 }
 
+header .logo {
+  height: 70px; /* Adjust the height as needed */
+  width: auto;
+  margin-right: 1rem;
+  border-radius: 50%;
+}
 
 header nav {
   display: flex;
@@ -36,7 +41,6 @@ header nav a {
 }
 
 header nav a.active {
- 
   color: red;
   border-bottom: 2px solid #333;
 }
@@ -48,16 +52,21 @@ header nav a.active {
 
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
-  header{
-    padding: 0px 30px;
+  header {
+    padding: 10px 30px;
   }
+  header .logo {
+  margin-top: 15px;
+  }
+  
+
   nav {
     display: none; 
     flex-direction: column;
     align-items: flex-start;
     background-color: #f9f9f9;
     position: absolute;
-    top: 60px;
+    top: 90px;
     left: 0;
     width: 95%;
     padding: 10px;
@@ -66,22 +75,20 @@ header nav a.active {
   }
 
   nav.show {
-    display: flex; 
-
+    display: flex;
   }
 
   .menu-icon {
-    display: block; 
+    display: block;
+    margin-top: 27px !important;
+    font-size: 30px !important;
   }
 
   header nav {
     display: none;
   }
+
   header nav a {
     padding: 10px;
-  }
-
-  .menu-icon {
-    display: block;
   }
 }

@@ -1,26 +1,75 @@
+/* contact.css */
 .contact {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: row; /* Stack items vertically on smaller screens */
+  justify-content: space-around;
   align-items: center;
-  padding: 20px 10px;
+  padding: 50px 20px;
+  background-color: #000; /* Black background */
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px; /* Adjust the max-width as needed */
+  text-align: center;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  color: #fff; /* Change text color for contrast */
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.contact-info > div {
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.contact-info > div p {
+  font-size: 1.2rem;
+  color: #ccc; /* Lighter text color for better readability */
+  margin: 5px 0;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 2rem;
+  color: #fff;
+  margin-top: 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.social-icons > * {
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.social-icons > *:hover {
+  color: #ddd;
+  transform: scale(1.2);
 }
 
 .contact-form {
-  width: 100%;
-  max-width: 400px;
-  padding: 20px;
-  background-color: #f8f8f8;
+  background: #333; /* Darker background for form */
+  padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Adjust shadow for better effect */
+  max-width: 500px;
+  width: 100%;
+  animation: slideUp 1s ease-in-out;
 }
 
 .contact-form h2 {
   margin-bottom: 20px;
-  color: #333;
-  background-color: transparent;
-  text-align: center;
+  font-size: 2rem;
+  color: #fff; /* Change text color for contrast */
 }
 
 .contact-form form {
@@ -29,48 +78,116 @@
 }
 
 .contact-form label {
-  font-weight: bold;
   margin-bottom: 5px;
+  color: #ccc; /* Lighter text color for better readability */
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding: 15px;
+  border: none;
+  border-bottom: 2px solid #666; /* Adjust border color for better visibility */
+  outline: none;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  font-size: 1rem;
+  color: #fff; /* Change text color for contrast */
+  background-color: #444; /* Darker background for inputs */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-bottom: 2px solid #fff; /* Change border color on focus */
 }
 
 .contact-form input[type="submit"] {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #fff; /* Light background for submit button */
+  color: #333; /* Dark text color for contrast */
   border: none;
+  padding: 15px;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .contact-form input[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #ddd;
 }
 
-.contact-image {
-  margin-left: 0;
-  text-align: center;
+.contact-form input,
+.contact-form textarea {
+  animation: inputAnimation 0.5s forwards;
 }
 
-.contact-image img {
-  max-width: 100%;
-  width: auto;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+@keyframes inputAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@media screen and (min-width: 768px) {
-  .contact-form {
-    margin-right: 20px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive CSS */
+@media screen and (max-width: 768px) {
+  .contact {
+    flex-direction: column;
+    padding: 30px 15px;
   }
 
-  .contact-image {
-    margin-left: 20px;
+  .contact-info {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .contact-form {
+    max-width: 98%;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .contact h2 {
+    font-size: 2rem;
+  }
+
+  .contact-info > div p {
+    font-size: 1rem;
+  }
+
+  .contact-form h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .contact-form input[type="submit"] {
+    padding: 10px;
+    font-size: 1rem;
   }
 }
